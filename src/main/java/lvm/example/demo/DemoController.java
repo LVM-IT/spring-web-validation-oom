@@ -14,8 +14,8 @@ import static org.slf4j.LoggerFactory.getLogger;
 public class DemoController {
     private static final Logger logger = getLogger(DemoController.class);
 
-    @PostMapping(value = "/mails", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> dispatchMail(@Valid @RequestBody EmailAttachement attachement) {
+    @PostMapping(value = "/attachements", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Void> addAttachement(@Valid @RequestBody EmailAttachement attachement) {
         logger.info("Attachement-Size {}", attachement.getAttachement().length);
         return ResponseEntity.ok().build();
     }
